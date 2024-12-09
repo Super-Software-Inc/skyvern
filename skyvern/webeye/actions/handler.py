@@ -1554,7 +1554,7 @@ async def input_or_auto_complete_input(
     # 4. call LLM to tweak the orignal text according to the information from #3, then start #1 again
 
     # FIXME: try the whole loop for twice now, to prevent too many LLM calls
-    MAX_AUTO_COMPLETE_ATTEMP = 2
+    MAX_AUTO_COMPLETE_ATTEMP = 0
     current_attemp = 0
     current_value = text
     result = AutoCompletionResult()
