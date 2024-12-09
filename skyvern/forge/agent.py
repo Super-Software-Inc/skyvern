@@ -1833,7 +1833,7 @@ class ForgeAgent:
                 step_id=step.step_id,
                 step_order=step.order,
                 step_retry=step.retry_index,
-                max_retries=settings.MAX_RETRIES_PER_STEP,
+                max_retries=max_retries_per_step
             )
             await self.update_task(
                 task,
@@ -1848,6 +1848,7 @@ class ForgeAgent:
                 step_id=step.step_id,
                 step_order=step.order,
                 step_retry=step.retry_index,
+                max_retries=max_retries_per_step,
             )
             next_step = await app.DATABASE.create_step(
                 task_id=task.task_id,
