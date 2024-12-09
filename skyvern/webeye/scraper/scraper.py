@@ -386,9 +386,9 @@ async def scrape_web_unsafe(
     # We check if the scroll_y_px_old is the same as scroll_y_px to determine if we have reached the end of the page.
     # This also solves the issue where we can't scroll due to a popup.(e.g. geico first popup on the homepage after
     # clicking start my quote)
-
-    LOG.info("Waiting for 5 seconds before scraping the website.")
-    await asyncio.sleep(5)
+    WAIT_BEFORE_SCRAPING_SECONDS = 2
+    LOG.info(f"Waiting for {WAIT_BEFORE_SCRAPING_SECONDS} seconds before scraping the website.")
+    await asyncio.sleep(WAIT_BEFORE_SCRAPING_SECONDS)
 
     screenshots = await SkyvernFrame.take_split_screenshots(page=page, url=url, draw_boxes=True)
 
