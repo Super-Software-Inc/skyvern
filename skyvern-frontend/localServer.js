@@ -3,7 +3,7 @@ import handler from "serve-handler";
 import open from "open";
 
 const port = 8080;
-const url = process.env.VITE_URL ;
+const url = process.env.VITE_URL || `http://localhost:${port}`;
 
 const server = createServer((request, response) => {
   // You pass two more arguments for config and middleware
